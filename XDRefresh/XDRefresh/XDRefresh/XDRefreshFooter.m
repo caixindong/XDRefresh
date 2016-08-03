@@ -127,11 +127,10 @@
 }
 
 - (void)endRefreshing {
-    _isRefreshing = NO;
-    
     dispatch_async(dispatch_get_main_queue(), ^{
        [UIView animateWithDuration:0.3f animations:^{
            [_indicator stopAnimating];
+            _isRefreshing = NO;
        }];
     });
 }
